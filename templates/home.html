@@ -1,0 +1,159 @@
+{% extends "portal/base.html" %}
+
+{% block title %}{{ school.name }}{% endblock %}
+
+{% block hero %}
+<section class="road-hero">
+    <div class="wrap road-hero-inner">
+        <div class="road-hero-copy">
+            <span class="eyebrow">School management, made simple</span>
+            <h1>The best way to follow every student's journey</h1>
+            <p>Manage students, teachers, courses and enrollments in one simple place.</p>
+            <div class="road-hero-actions">
+                <a class="btn-road" href="{% url 'enrollment' %}">Get started <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+                <a class="btn-road-ghost" href="#features">Learn more</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+    <!-- Live numbers -->
+    <div class="stats">
+        <div class="stat">
+            <div>
+                <span class="stat-number">{{ student_count }}</span>
+                <span class="stat-label">Students</span>
+            </div>
+            <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-students"/></svg></span>
+        </div>
+        <div class="stat">
+            <div>
+                <span class="stat-number">{{ teacher_count }}</span>
+                <span class="stat-label">Teachers</span>
+            </div>
+            <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-teachers"/></svg></span>
+        </div>
+        <div class="stat">
+            <div>
+                <span class="stat-number">{{ course_count }}</span>
+                <span class="stat-label">Courses</span>
+            </div>
+            <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-courses"/></svg></span>
+        </div>
+        <div class="stat">
+            <div>
+                <span class="stat-number">{{ enrollment_count }}</span>
+                <span class="stat-label">Enrollments</span>
+            </div>
+            <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-enroll"/></svg></span>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="section" id="features">
+        <div class="section-head">
+            <span class="eyebrow">Features</span>
+            <h2>Everything a school needs, in one place</h2>
+            <p>Masar keeps students, teachers and courses connected, so every change stays in sync.</p>
+        </div>
+
+        <div class="features">
+            <article class="feature feature-blue">
+                <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-students"/></svg></span>
+                <h3>Students</h3>
+                <p>Add students in seconds. Each one gets an ID automatically, and you can see every course they take.</p>
+            </article>
+            <article class="feature feature-teal">
+                <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-teachers"/></svg></span>
+                <h3>Teachers</h3>
+                <p>Keep track of each teacher's subject and the courses they are teaching.</p>
+            </article>
+            <article class="feature feature-gold">
+                <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-courses"/></svg></span>
+                <h3>Courses</h3>
+                <p>Create courses with a code generated from the name, then assign the right teacher.</p>
+            </article>
+            <article class="feature feature-plum">
+                <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-enroll"/></svg></span>
+                <h3>Enrollment</h3>
+                <p>Enroll a student in a course or drop them, and see who is in every class.</p>
+            </article>
+            <article class="feature feature-coral">
+                <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+                <h3>Safe deletes</h3>
+                <p>A clear confirmation before anything is removed, and every linked record is cleaned up.</p>
+            </article>
+            <article class="feature feature-navy">
+                <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
+                <h3>Live overview</h3>
+                <p>The numbers on this page update the moment anything changes.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+        <div class="section-head">
+            <span class="eyebrow">How it works</span>
+            <h2>Three steps to get started</h2>
+        </div>
+
+        <ol class="steps">
+            <li class="step">
+                <span class="step-number">1</span>
+                <h3>Add your people</h3>
+                <p>Register your students and teachers.</p>
+                <a href="{% url 'student_list' %}">Add students <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+            </li>
+            <li class="step">
+                <span class="step-number">2</span>
+                <h3>Build your courses</h3>
+                <p>Create courses and assign a teacher to each one.</p>
+                <a href="{% url 'course_list' %}">Add courses <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+            </li>
+            <li class="step">
+                <span class="step-number">3</span>
+                <h3>Follow the journey</h3>
+                <p>Enroll students and see every class at a glance.</p>
+                <a href="{% url 'enrollment' %}">Enroll students <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Explore -->
+    <section class="section">
+        <div class="section-head">
+            <span class="eyebrow">Explore</span>
+            <h2>Jump right in</h2>
+        </div>
+
+        <div class="tiles">
+            <a class="tile tile-students" href="{% url 'student_list' %}">
+                <span class="tile-image"></span>
+                <span class="tile-label"><span><svg class="icon" aria-hidden="true"><use href="#i-students"/></svg>Students</span></span>
+            </a>
+            <a class="tile tile-teachers" href="{% url 'teacher_list' %}">
+                <span class="tile-image"></span>
+                <span class="tile-label"><span><svg class="icon" aria-hidden="true"><use href="#i-teachers"/></svg>Teachers</span></span>
+            </a>
+            <a class="tile tile-courses" href="{% url 'course_list' %}">
+                <span class="tile-image"></span>
+                <span class="tile-label"><span><svg class="icon" aria-hidden="true"><use href="#i-courses"/></svg>Courses</span></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Final call to action -->
+    <section class="cta-band">
+        <div>
+            <h2>Ready to start the journey?</h2>
+            <p>Enroll your first student and watch everything connect.</p>
+        </div>
+        <div class="cta-actions">
+            <a class="btn-road" href="{% url 'enrollment' %}">Enroll a student <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+            <a class="btn-light" href="{% url 'course_list' %}">View courses</a>
+        </div>
+    </section>
+{% endblock %}

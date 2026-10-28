@@ -1,0 +1,180 @@
+/* ==========================================================
+   Landing page sections (home page)
+   ========================================================== */
+html { scroll-behavior: smooth; }
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+}
+
+.section { margin-top: 5rem; }
+
+.section-head {
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.section-head h2 {
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+}
+
+.section-head p { margin: 0; color: var(--muted); font-size: 1.08rem; }
+
+/* ---------- Features ---------- */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.feature {
+    --tone: var(--accent);
+    --tone-soft: var(--accent-soft);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 1.6rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--tone);
+}
+
+.feature-blue  { --tone: var(--accent); --tone-soft: var(--accent-soft); }
+.feature-teal  { --tone: var(--teal);   --tone-soft: var(--teal-soft); }
+.feature-gold  { --tone: var(--gold-dark); --tone-soft: var(--gold-soft); }
+.feature-plum  { --tone: var(--plum);   --tone-soft: var(--plum-soft); }
+.feature-coral { --tone: var(--coral);  --tone-soft: var(--coral-soft); }
+.feature-navy  { --tone: var(--navy);   --tone-soft: #e7edf3; }
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.1rem;
+    border-radius: 14px;
+    color: var(--tone);
+    background: var(--tone-soft);
+}
+
+.feature-icon .icon { width: 1.5rem; height: 1.5rem; }
+
+.feature h3 { margin: 0 0 0.4rem; font-size: 1.2rem; }
+.feature p  { margin: 0; color: var(--muted); }
+
+/* ---------- How it works ---------- */
+.steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    counter-reset: none;
+}
+
+.step {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.6rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--accent);
+    box-shadow: 0 0 0 6px var(--accent-soft);
+}
+
+.step:nth-child(2) .step-number { background: var(--teal); box-shadow: 0 0 0 6px var(--teal-soft); }
+.step:nth-child(3) .step-number { background: var(--gold); box-shadow: 0 0 0 6px var(--gold-soft); }
+
+.step h3 { margin: 0 0 0.35rem; font-size: 1.2rem; }
+.step p  { margin: 0 0 1rem; color: var(--muted); }
+
+.step a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.step a:hover { color: var(--accent-dark); }
+.step a .icon { transition: transform 0.15s; }
+.step a:hover .icon { transform: translateX(3px); }
+
+/* ---------- Final call to action ---------- */
+.cta-band {
+    position: relative;
+    overflow: hidden;
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2.75rem;
+    border-radius: var(--radius-lg);
+    color: var(--white);
+    background:
+        radial-gradient(circle at 90% 0%, rgba(224, 165, 38, 0.35), transparent 40%),
+        radial-gradient(circle at 75% 120%, rgba(31, 158, 143, 0.4), transparent 45%),
+        linear-gradient(135deg, var(--navy-mid), var(--navy-deep));
+    box-shadow: var(--shadow-lift);
+}
+
+.cta-band h2 { color: var(--white); margin: 0 0 0.4rem; font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.cta-band p  { margin: 0; color: #c5d3e0; }
+
+.cta-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+.btn-light {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 1.7rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--white);
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    transition: background 0.15s, transform 0.15s;
+}
+
+.btn-light:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
+
+@media (max-width: 760px) {
+    .section { margin-top: 3.5rem; }
+    .cta-band { padding: 2rem 1.5rem; }
+
+    /* Two stat cards per row on phones instead of four tall ones */
+    .stats { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .stat { padding: 1.1rem; }
+    .stat-icon { width: 2.3rem; height: 2.3rem; }
+}
