@@ -15,6 +15,10 @@
   <img alt="Storage" src="https://img.shields.io/badge/Storage-JSON-3D9AD6">
 </p>
 
+<p align="center">
+  <a href="https://masarr.pythonanywhere.com"><b>🌐 Live demo: masarr.pythonanywhere.com</b></a>
+</p>
+
 > **This is a showcase repository.** It contains the design, the front-end code and the project documentation.
 > The full source code is private. It is available on request.
 
@@ -43,7 +47,7 @@ I then built a **Django web interface on top of the same classes**. The web app 
 
 ---
 
-##  Screenshots
+## Screenshots
 
 | Students | Teachers |
 |---|---|
@@ -114,9 +118,11 @@ masar-showcase/
 
 Python · Django · HTML · CSS · JavaScript · JSON · Git
 
+**Deployed on** PythonAnywhere, with `DEBUG` off, the secret key kept out of the code, static files served by the host, and a custom 404 page.
+
 ---
 
-##  Author
+## Author
 
 **Mashael** · Python & Django Bootcamp
 [GitHub](https://github.com/Mashael16) · [LinkedIn](https://www.linkedin.com/in/mashael-alharbi-0b42822ab/)
